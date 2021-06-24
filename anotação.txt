@@ -1,0 +1,37 @@
+//com instalação de dependencias yarn add @types/express -D
+//yarn add express
+//yarn tsc --init para config e yarn tsc para converter TS para JS no NODE
+//package json com yarn init -y
+//typescript para desevolvimento : yarn add typescript -D
+import express from 'express'
+//yarn ts-node-dev -D lib para automatizar desenvolvimento 
+const app = express()
+//rota com HTTP no NODE
+/**
+ * GET    => buscar um recurso
+ * POST   => inserir(CRIAR) uma informação 
+ * PUT    => Alterar uma informação
+ * DELETE => Remover um recurso
+ * PACTH  => alterar um recurso especifico
+ */
+/**
+ * Tipos de parametros 
+ * Route params => http://localhost:3000/Produtos/1312342
+ * Quey params => http://localhost:3000/Produtos?name=Teclado&type=mecanico
+ * 
+ * Body params => {
+ *  "name":"teclado",
+ *  "type":"mecanical"
+ * }
+ */
+app.get("/test",(request, response)=>{
+  //Requisição => input
+  //Response => output
+  return response.send("ola nlw")
+});
+
+app.post("/test-post",(request,response)=>{
+  return response.send("ola eu sou o post")
+});
+//inicializar o servidor
+app.listen(5000, ()=>console.log('server is running'))
